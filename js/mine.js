@@ -11,12 +11,22 @@ let month = ["January", "February", "March", "April", "May", "June", "July", "Au
 // ============================Next Day===========================
 (function () {
     let currentDay = new Date();
-    document.querySelector("#secondCard .header-card span").innerHTML = days[(currentDay.getDay() + 1)];
+    if (currentDay.getDay() == 6) {
+        document.querySelector("#secondCard .header-card span").innerHTML = days[0];
+    } else {
+        document.querySelector("#secondCard .header-card span").innerHTML = days[(currentDay.getDay() + 1)];
+    }
 })();
 // ============================last Day===========================
-(function(){
+(function () {
     let currentDay = new Date();
-    document.querySelector("#lastCard .header-card span").innerHTML = days[(currentDay.getDay()+2)];
+    if (currentDay.getDay() == 5) {
+        document.querySelector("#lastCard .header-card span").innetHTML = days[0];
+    } else if (currentDay.getDay() == 6) {
+        document.querySelector("#lastCard .header-card span").innerHTML = days[1];
+    } else {
+        document.querySelector("#lastCard .header-card span").innerHTML = days[(currentDay.getDay() + 2)];
+    }
 })();
 async function getWeather(city) {
     let apiWeather = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=ec54118b4957441d8c910848240201&q=${city}&days=3`);
