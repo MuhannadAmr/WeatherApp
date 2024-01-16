@@ -122,6 +122,10 @@ nav .links-site ul li:hover a {
     right: 5px;
 }
 /* ========================cards================================= */
+.row>*{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
 .header-card{
     background: rgba(0, 0, 0, 0.1);
     color: #bfc1c8;
